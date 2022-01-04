@@ -1,0 +1,131 @@
+<template>
+    <Head title="Welcome" />
+
+    <div class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center sm:pt-0">
+        <div v-if="canLogin" class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
+            <Link v-if="$page.props.user" :href="route('dashboard')" class="text-sm text-gray-700 underline">
+                Dashboard
+            </Link>
+
+            <template v-else>
+                <Link :href="route('login')" class="text-sm text-gray-700 underline">
+                    Log in
+                </Link>
+
+                <Link v-if="canRegister" :href="route('register')" class="ml-4 text-sm text-gray-700 underline">
+                    Register
+                </Link>
+            </template>
+        </div>
+
+        <div class="max-w-6xl text-5xl mx-auto sm:px-6 lg:px-8">
+
+            <div class="p-3 mt-8 bg-white dark:bg-gray-800 overflow-hidden shadow sm:rounded-lg">
+                <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 347.268 347.268" style="enable-background:new 0 0 347.268 347.268;" xml:space="preserve">
+                    <g>
+                        <path d="M291.036,7.5c0-4.142-3.357-7.5-7.5-7.5H63.731c-4.142,0-7.5,3.358-7.5,7.5v332.268c0,4.143,3.358,7.5,7.5,7.5h219.805
+                            c4.143,0,7.5-3.357,7.5-7.5V7.5z M238.077,299.322v-59.165h11.479v59.165H238.077z M217.39,299.322l5.687-24.088v24.088H217.39z
+                            M124.19,299.322v-66.665c0-4.143-3.357-7.5-7.5-7.5H71.231v-10.61h204.805v10.61h-45.459c-1.926,0-3.676,0.732-5.004,1.924
+                            l-24.667-5.823c-1.936-0.457-3.974-0.127-5.667,0.92c-1.691,1.046-2.899,2.721-3.356,4.656l-17.04,72.182
+                            c-0.025,0.102-0.037,0.204-0.057,0.307H124.19z M71.231,299.322v-59.165h11.479v59.165H71.231z M97.711,240.157h11.479v59.165
+                            H97.711V240.157z M71.231,140.382h11.479v59.165H71.231V140.382z M196.398,188.067v11.48h-59.165v-11.48H196.398z M137.233,173.067
+                            v-11.479h59.165v11.479H137.233z M211.398,199.547v-22.603l5.336,22.603H211.398z M218.195,140.442l11.172-2.638l13.594,57.583
+                            l-11.174,2.637L218.195,140.442z M215.93,240.218L202.338,297.8l-11.173-2.637l13.594-57.583L215.93,240.218z M264.556,240.157
+                            h11.48v59.165h-11.48V240.157z M276.036,88.296v11.479h-59.165V88.296H276.036z M216.871,73.296V61.816h59.165v11.479H216.871z
+                            M71.231,15h204.805v31.816h-66.665c-4.143,0-7.5,3.357-7.5,7.5v45.459H150.67V33.11c0-4.143-3.357-7.5-7.5-7.5H71.231V15z
+                            M135.67,40.61v59.165h-11.48V40.61H135.67z M109.19,40.61v59.165H97.711V40.61H109.19z M71.231,40.61h11.479v59.165H71.231V40.61z
+                            M276.036,114.775v84.772h-16.697c-0.02-0.103-0.033-0.205-0.057-0.307l-17.041-72.182c-0.457-1.936-1.664-3.61-3.355-4.656
+                            c-1.695-1.047-3.734-1.377-5.668-0.92l-25.77,6.084c-4.031,0.952-6.527,4.991-5.576,9.022l2.364,10.016
+                            c-0.113-0.005-0.224-0.017-0.338-0.017h-74.165c-4.143,0-7.5,3.357-7.5,7.5v45.459H97.711v-66.665c0-4.143-3.357-7.5-7.5-7.5
+                            H71.231v-10.606H276.036z M276.036,332.268H71.231v-17.945h204.805V332.268z"/>
+                    </g>
+                </svg>
+                <h1>BIBLIOTECA</h1>
+            </div>
+
+        </div>
+    </div>
+</template>
+
+<style scoped>
+    .bg-gray-100 {
+        background-color: #f7fafc;
+        background-color: rgba(247, 250, 252, var(--tw-bg-opacity));
+    }
+
+    .border-gray-200 {
+        border-color: #edf2f7;
+        border-color: rgba(237, 242, 247, var(--tw-border-opacity));
+    }
+
+    .text-gray-400 {
+        color: #cbd5e0;
+        color: rgba(203, 213, 224, var(--tw-text-opacity));
+    }
+
+    .text-gray-500 {
+        color: #a0aec0;
+        color: rgba(160, 174, 192, var(--tw-text-opacity));
+    }
+
+    .text-gray-600 {
+        color: #718096;
+        color: rgba(113, 128, 150, var(--tw-text-opacity));
+    }
+
+    .text-gray-700 {
+        color: #4a5568;
+        color: rgba(74, 85, 104, var(--tw-text-opacity));
+    }
+
+    .text-gray-900 {
+        color: #1a202c;
+        color: rgba(26, 32, 44, var(--tw-text-opacity));
+    }
+
+    @media (prefers-color-scheme: dark) {
+        .dark\:bg-gray-800 {
+            background-color: #2d3748;
+            background-color: rgba(45, 55, 72, var(--tw-bg-opacity));
+        }
+
+        .dark\:bg-gray-900 {
+            background-color: #1a202c;
+            background-color: rgba(26, 32, 44, var(--tw-bg-opacity));
+        }
+
+        .dark\:border-gray-700 {
+            border-color: #4a5568;
+            border-color: rgba(74, 85, 104, var(--tw-border-opacity));
+        }
+
+        .dark\:text-white {
+            color: #fff;
+            color: rgba(255, 255, 255, var(--tw-text-opacity));
+        }
+
+        .dark\:text-gray-400 {
+            color: #cbd5e0;
+            color: rgba(203, 213, 224, var(--tw-text-opacity));
+        }
+    }
+</style>
+
+<script>
+    import { defineComponent } from 'vue'
+    import { Head, Link } from '@inertiajs/inertia-vue3';
+
+    export default defineComponent({
+        components: {
+            Head,
+            Link,
+        },
+
+        props: {
+            canLogin: Boolean,
+            canRegister: Boolean,
+            laravelVersion: String,
+            phpVersion: String,
+        }
+    })
+</script>
