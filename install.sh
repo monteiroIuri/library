@@ -1,7 +1,7 @@
 #!/bin/bash
 echo "Iniciando instalação..."
-echo "^.^"
-
+echo ""
+sh ./script.sh
 composer install &&
 cp .env.example .env &&
 php artisan key:generate &&
